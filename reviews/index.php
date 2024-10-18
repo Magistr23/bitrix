@@ -2,13 +2,15 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("О компании");
 ?><?$APPLICATION->IncludeComponent(
-	"reviews",
-	"",
-	Array(
+	"reviews", 
+	".default", 
+	array(
 		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "reviews",
-		"SHOW_TITLE" => "Y"
-	)
+		"SHOW_TITLE" => "Y",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 );?><img width="475" src="/upload/company.jpg" height="283">
 <p>
 	 Наша компания существует на Российском рынке с 1992 года. За это время <b>«Мебельная компания»</b> прошла большой путь от маленькой торговой фирмы до одного из крупнейших производителей корпусной мебели в России.

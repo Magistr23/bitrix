@@ -69,7 +69,18 @@ $APPLICATION->IncludeFile(
 	array(
 		"ACTIVE_COMPONENT" => "Y"
 	)
-);?>
+);
+
+global $USER;
+
+if ($USER->IsAuthorized()) {
+    // Проверка на наличие прав администратора
+		if ($USER->IsAdmin()) {
+			echo "<a href='/proverit'>Проверка отзывов</a>";
+		}
+	} 
+
+?>
 				</div>
 			</div>
 			
