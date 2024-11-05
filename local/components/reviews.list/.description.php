@@ -4,6 +4,9 @@ $arComponentDescription = array(
     "DESCRIPTION" => GetMessage("Выводим отзывы"),
     "PATH" => array(
         "ID" => "Отзывы о компаниях",
+        "CHILD" => array(
+			"ID" => "публичная версия",
+		)
     ),
 );
 ?>

@@ -29,14 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['name']) && !empty($_P
 
     // ID инфоблока, куда будут сохраняться отзывы
     $iblockId = 5; // Укажите ID вашего инфоблока
+    $sectionId = 9; // Укажите ID вашего инфоблока
 
     // Массив данных для создания элемента
     $arFields = array(
         "IBLOCK_ID" => $iblockId,
+        'IBLOCK_SECTION_ID' => $sectionId,
         "NAME" => htmlspecialchars($_POST['name']),
         "PROPERTY_VALUES" => ["company" => htmlspecialchars($_POST['company'])],
         "PREVIEW_TEXT" => htmlspecialchars($_POST['review']),
-        "ACTIVE" => "N", // Отзыв неактивен, пока администратор не подтвердит
+        "ACTIVE" => "Y",
     );
 
     $el = new CIBlockElement;

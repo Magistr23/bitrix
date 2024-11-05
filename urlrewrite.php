@@ -16,14 +16,6 @@ $arUrlRewrite=array (
     'PATH' => '/products/index.php',
     'SORT' => 100,
   ),
-  3 => 
-  array (
-    'CONDITION' => '#^/proverit/#',
-    'RULE' => '',
-    'ID' => 'reviews',
-    'PATH' => '/proverit/index.php',
-    'SORT' => 100,
-  ),
   2 => 
   array (
     'CONDITION' => '#^/news/#',

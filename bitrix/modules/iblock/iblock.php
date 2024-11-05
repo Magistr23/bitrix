@@ -395,7 +395,7 @@ function GetIBlockElement($ID, $TYPE = "")
 	$filter = array(
 		"ID" => intval($ID),
 		"ACTIVE_DATE" => "Y",
-		"ACTIVE" => "Y",
+
 		"CHECK_PERMISSIONS" => "Y",
 	);
 	if ($TYPE != "")

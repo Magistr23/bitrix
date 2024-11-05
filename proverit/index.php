@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Проверить");
 ?><?$APPLICATION->IncludeComponent(
-	"reviews.list", 
+	"reviews.list.admin", 
 	".default", 
 	array(
 		"ADMIN" => "Y",
