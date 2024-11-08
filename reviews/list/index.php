@@ -1,18 +1,17 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
 <?$APPLICATION->SetTitle("Отзывы компаний");?>
-<p>Оставь свой отзыв</p>
+
 <?$APPLICATION->IncludeComponent(
 	"forms", 
-	"grid", 
+	"bootstrap", 
 	array(
 		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "reviews",
-		"COMPONENT_TEMPLATE" => "grid"
+		"COMPONENT_TEMPLATE" => "bootstrap"
 	),
 	false
 );?>
-<p>Список отзывов</p>
 <?$APPLICATION->IncludeComponent(
 	"reviews.list", 
 	"flex", 
@@ -23,9 +22,4 @@
 	),
 	false
 );?>
-<script>
-	    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
-</script>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

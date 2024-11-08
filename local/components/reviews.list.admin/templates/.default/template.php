@@ -23,7 +23,12 @@ if ($USER->IsAdmin()):?>
         </div>
     <?php endforeach; ?>
 </div>
-
+<?php if (isset($_SESSION['result'])) {
+        echo '<div class="result">';
+        echo $_SESSION['result'];
+        echo '</div>';
+        unset($_SESSION['result']);
+} ?>
 <?php else: ?>
 
 <div class="sections-wrapper">

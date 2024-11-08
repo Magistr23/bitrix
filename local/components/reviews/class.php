@@ -15,7 +15,6 @@ class testComponent extends CBitrixComponent
     {
 
         $elementId = $this->arParams['ELEMENT_CODE'];
-        $iblockId = $this->arParams['SECTION_ID'];
 
         if (CModule::IncludeModule("iblock")) {
         $arElement = [];

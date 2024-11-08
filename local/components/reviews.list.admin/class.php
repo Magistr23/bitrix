@@ -49,7 +49,7 @@ class testComponent extends CBitrixComponent
                 ['IBLOCK_ID' => $iblockId, 'ACTIVE' => "Y"], // Фильтр по инфоблоку и активным элементам
                 false,
                 false,
-                ['ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
+                ['ID', 'IBLOCK_SECTION_ID','company', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
             );
 
             // Шаг 4. Распределяем элементы по разделам

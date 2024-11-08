@@ -13,19 +13,6 @@ class testComponent extends CBitrixComponent
 
     public function doAction()
     {
-        // $this->arResult['SECTIONS'] = 123;
-        // if (empty($this->arParams["TEMPLATE_FOR_DATE"])) {
-        //     $this->arResult['DATE'] = date('Y/m/d');
-        // } else {
-        //     $this->arResult['DATE'] = date($this->arParams["TEMPLATE_FOR_DATE"]);
-        // }
-        // if ($this->arParams['SHOW_TITLE'] === "Y") {
-        //     $this->arResult['TEST'] = "Картинка включёна";
-        //     $this->arResult['UPLOAD_FILE'] = "<img src=". $this->arParams['UPLOAD_FILE'] ." alt=''>";
-        // } else {
-        //     $this->arResult['TEST'] = "Картинка выключена";
-        // }
-        // $this->arResult['COLOR'] = $this->arParams['COLOR'];
         $iblockId = $this->arParams['IBLOCK_ID'];
 
         if (CModule::IncludeModule("iblock")) {
@@ -37,7 +24,7 @@ class testComponent extends CBitrixComponent
                 $sid = 1;
             } else {
                 $active = "Y";
-            }            
+            }           
             // Шаг 1. Получаем все разделы инфоблока
             $sectionRes = CIBlockSection::GetList(
                 ['SORT' => 'ASC'], // Сортировка по порядку
@@ -55,6 +42,15 @@ class testComponent extends CBitrixComponent
                 ];
             }
 
+            if (isset($_GET["SECTION_ID"])) {
+                $elementRes = CIBlockElement::GetList(
+                    ['SORT' => 'ASC'], // Сортировка
+                    ['IBLOCK_ID' => $iblockId,"SECTION_ID"=>$_GET['SECTION_ID'],  'ACTIVE' => $active], // Фильтр по инфоблоку и активным элементам
+                    false,
+                    false,
+                    ['ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
+                );
+            } else {
             // Шаг 3. Получаем элементы инфоблока, сгруппированные по разделам
             $elementRes = CIBlockElement::GetList(
                 ['SORT' => 'ASC'], // Сортировка
@@ -63,6 +59,7 @@ class testComponent extends CBitrixComponent
                 false,
                 ['ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
             );
+        }
 
             // Шаг 4. Распределяем элементы по разделам
             while ($element = $elementRes->GetNext()) {

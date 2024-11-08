@@ -1,7 +1,4 @@
-<? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-echo $arResult['DATE'];
-echo $arResult['TEST'];
-?>
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <div class="sections-wrapper">
     <?php foreach ($arResult['SECTIONS'] as $section): ?>
@@ -22,3 +19,13 @@ echo $arResult['TEST'];
         </div>
     <?php endforeach; ?>
 </div>
+
+
+
+<style>
+    .sections-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;  
+    }
+</style>

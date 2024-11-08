@@ -37,13 +37,6 @@ $arComponentParameters = [
             "DEFAULT" => '',
             "REFRESH" => "Y", // Обновление параметров формы при изменении
         ],
-        "ADMIN" => [
-            "PARENT" => "BASE",
-            "NAME" => "Проверка для администратора",
-            "TYPE" => "CHECKBOX",
-            "DEFAULT" => "N",
-            "REFRESH" => "N",
-        ],
     ],
 ];
 ?>

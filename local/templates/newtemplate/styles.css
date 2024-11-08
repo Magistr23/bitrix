@@ -26,6 +26,16 @@ hr, .hr
 	overflow:hidden;
 	padding:0;
 }
-
+#workarea {
+	width: 100% !important
+}
 #workarea ol li, #workarea ul li { margin: 0.6em 0; }
 #workarea ul { list-style-type: disc; }
+
+.result {
+	border: 2px red solid;
+	text-align: center;
+	-webkit-box-shadow: 26px 22px 13px 18px rgba(34, 60, 80, 0.24);
+	-moz-box-shadow: 26px 22px 13px 18px rgba(34, 60, 80, 0.24);
+	box-shadow: 26px 22px 13px 18px rgba(34, 60, 80, 0.24);
+}

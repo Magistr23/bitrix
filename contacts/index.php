@@ -39,15 +39,5 @@ $APPLICATION->SetTitle("Контакты");
 		"MAP_WIDTH" => "600",
 		"OPTIONS" => array("ENABLE_SCROLL_ZOOM","ENABLE_DBLCLICK_ZOOM","ENABLE_DRAGGING")
 	)
-);?><?$APPLICATION->IncludeComponent(
-	"reviews.list", 
-	".default", 
-	array(
-		"ADMIN" => "N",
-		"IBLOCK_ID" => "5",
-		"IBLOCK_TYPE" => "reviews",
-		"COMPONENT_TEMPLATE" => ".default"
-	),
-	false
 );?>
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
