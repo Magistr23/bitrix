@@ -18,20 +18,23 @@ class testComponent extends CBitrixComponent
         if (CModule::IncludeModule("iblock")) {
             $arSections = [];
 
-            if($this->arParams['ADMIN'] === "Y")
+            if($this->arParams['NUMBER'] > 0)
             {
-                $active = "N";
-                $sid = 1;
+                $number = $this->arParams['NUMBER'];
             } else {
-                $active = "Y";
-            }           
+                $number = 3;
+            }
+            $arNavParams = array("nPageSize" => $number);
             // Шаг 1. Получаем все разделы инфоблока
             $sectionRes = CIBlockSection::GetList(
                 ['SORT' => 'ASC'], // Сортировка по порядку
-                ['IBLOCK_ID' => $iblockId, 'ACTIVE' => $active], // Фильтр: инфоблок и активные разделы
+                ['IBLOCK_ID' => $iblockId, 'ACTIVE' => "Y"], // Фильтр: инфоблок и активные разделы
                 false,
-                ['ID', 'NAME']
+                ['ID', 'NAME'],
+                $arNavParams
             );
+
+            // $sectionRes->NavStart(2);
 
             // Шаг 2. Проходим по каждому разделу
             while ($section = $sectionRes->Fetch()) {
@@ -45,7 +48,7 @@ class testComponent extends CBitrixComponent
             if (isset($_GET["SECTION_ID"])) {
                 $elementRes = CIBlockElement::GetList(
                     ['SORT' => 'ASC'], // Сортировка
-                    ['IBLOCK_ID' => $iblockId,"SECTION_ID"=>$_GET['SECTION_ID'],  'ACTIVE' => $active], // Фильтр по инфоблоку и активным элементам
+                    ['IBLOCK_ID' => $iblockId,"SECTION_ID"=>$_GET['SECTION_ID'],  'ACTIVE' => "Y"], // Фильтр по инфоблоку и активным элементам
                     false,
                     false,
                     ['ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
@@ -54,7 +57,7 @@ class testComponent extends CBitrixComponent
             // Шаг 3. Получаем элементы инфоблока, сгруппированные по разделам
             $elementRes = CIBlockElement::GetList(
                 ['SORT' => 'ASC'], // Сортировка
-                ['IBLOCK_ID' => $iblockId, 'ACTIVE' => $active], // Фильтр по инфоблоку и активным элементам
+                ['IBLOCK_ID' => $iblockId, 'ACTIVE' => "Y"], // Фильтр по инфоблоку и активным элементам
                 false,
                 false,
                 ['ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_PAGE_URL', "DETAIL_TEXT"]
@@ -70,7 +73,7 @@ class testComponent extends CBitrixComponent
                     // $arSections[$element['IBLOCK_SECTION_ID']]['ELEMENTS'][] = $element;
                 }
             }
-
+            echo $sectionRes->NavPrint("Страницы", true);
             $this->arResult['SECTIONS'] = $arSections;
 
         }

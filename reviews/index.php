@@ -15,11 +15,12 @@
 <p>Список отзывов</p>
 <?$APPLICATION->IncludeComponent(
 	"reviews.list", 
-	"flex", 
+	".default", 
 	array(
-		"COMPONENT_TEMPLATE" => "flex",
+		"COMPONENT_TEMPLATE" => ".default",
 		"IBLOCK_ID" => "5",
-		"IBLOCK_TYPE" => "reviews"
+		"IBLOCK_TYPE" => "reviews",
+		"NUMBER" => "2"
 	),
 	false
 );?>

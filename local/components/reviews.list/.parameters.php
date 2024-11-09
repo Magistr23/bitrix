@@ -37,6 +37,12 @@ $arComponentParameters = [
             "DEFAULT" => '',
             "REFRESH" => "Y", // Обновление параметров формы при изменении
         ],
+        "NUMBER" => [
+            "PARENT" => "VISUAL",
+            "NAME" => "Сколько элементов выводить на страницу",
+            "TYPE" => "STRING",
+            "DEFAULT" => '3',
+        ],
     ],
 ];
 ?>

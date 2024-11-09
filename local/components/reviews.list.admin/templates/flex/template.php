@@ -18,7 +18,6 @@
                 <p>В этом разделе пока нет элементов.</p>
             <?php endif; ?>
         </div>
-        <div class="result"></div>
     <?php endforeach; ?>
 </div>
     <?php if (isset($_SESSION['result'])) {
