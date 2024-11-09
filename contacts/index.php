@@ -25,19 +25,5 @@ $APPLICATION->SetTitle("Контакты");
 </ul>
 <h2>Офис в Москве</h2>
 <p>
-	 <?$APPLICATION->IncludeComponent(
-	"bitrix:map.google.view",
-	"",
-	Array(
-		"API_KEY" => "",
-		"CONTROLS" => array("SCALELINE"),
-		"INIT_MAP_TYPE" => "ROADMAP",
-		"KEY" => "ABQIAAAAOSNukcWVjXaGbDo6npRDcxS1yLxjXbTnpHav15fICwCqFS-qhhSby0EyD6rK_qL4vuBSKpeCz5cOjw",
-		"MAP_DATA" => "a:3:{s:10:\"google_lat\";d:55.7383;s:10:\"google_lon\";d:37.5946;s:12:\"google_scale\";i:13;}",
-		"MAP_HEIGHT" => "500",
-		"MAP_ID" => "",
-		"MAP_WIDTH" => "600",
-		"OPTIONS" => array("ENABLE_SCROLL_ZOOM","ENABLE_DBLCLICK_ZOOM","ENABLE_DRAGGING")
-	)
-);?>
+	 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3fafbd8057939ef126a2918cb295c06113f571342f9bc06c15a450fc74efcf2e&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
